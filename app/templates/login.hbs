@@ -1,9 +1,19 @@
 <h3>Login</h3>
 
-<form {{action 'authenticate' on='submit'}}>
+<h4>With oauth2</h4>
+<form {{action 'oauth2Authenticate' on='submit'}}>
   <label for="identification">Login</label>
   {{input id='identification' placeholder='Enter Login' value=identification}}
   <label for="password">Password</label>
   {{input id='password' placeholder='Enter Password' type='password' value=password}}
   <button type="submit">Login</button>
+</form>
+
+<h4>With Devise</h4>
+<form {{action 'deviseAuthenticate' on='submit'}}>
+  <label for="identification">Email</label>
+  {{input value=identification placeholder='Enter your email address' type='email' required='' autofocus=''}}
+  <label for="password">Password</label>
+  {{input value=password placeholder='Enter your password' type='password' required=''}}
+  <button type="submit">Sign in</button>
 </form>
